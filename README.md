@@ -1,27 +1,29 @@
 # Wearable-Health-Insights
 This repository documents an ongoing learning and research project in wearable health data analysis.
 
-Statistical analysis of wearable device using Fitbit data from the Fitabase dataset.
+The project focuses on applying statistical methods and data-processing techniques to wearable health measurements, with an emphasis on understanding how variables are measured, derived, and interpreted.
 
+## Project Overview
 The project is organized into two analytical components:
 - **Part I: Exploratory Analysis of Activity and Energy Expenditure** [Completed]
 - **Part II: Analysis of Sleep Characteristics and Heart Rate Responses Using Wearable Data** [Ongoing]
 
 ## About the Data
-This project utilizes the **Fitabase dataset**, which consists of minute-level, hourly, and daily physiological records collected from Fitbit users.
+This project utilizes the **Fitabase dataset**, which contains wearable device measurements collected from Fitbit users at different temporal resolutions, including hourly, minute-level, and 5-second-level records.
 
 * Data Source: [Kaggle: FitBit Fitness Tracker Data](https://www.kaggle.com/datasets/arashnic/fitbit)
+* Device: Fitbit wearable devices
 
-## Part I: Exploratory Analysis of Activity and Energy Expenditure
+## **Part I: Exploratory Analysis of Activity and Energy Expenditure**
 Status: Completed
 
 **Purpose**<br>
-This analysis was conducted as an exploratory exercise to understand and structure of Fitbit-derived activity data and practice statistical data analysis using wearable device measurements.
+To explore Fitbit-derived activity data and practice statistical analysis.
 
-The analysis examined:
-* Hourly patterns of physical activity
-* The relationship between step count and device-estimated calorie expenditure
-* The relationship between activity intensity and device-estimated calorie expenditure
+**Analyses**<br>
+* Hourly patterns of physical activity and calorie expenditure
+* Relationship between step count, activity intensity, and estimated calorie expenditure
+* Simple and multiple linear regression
 
 **Interpretation**<br>
 The analysis identified a positive association between activity measures and Fitbit-estimated calorie expenditure. For example, the simple linear regression between hourly step count and calorie expenditure produced an adjusted R^2 of approximately 0.664.
@@ -35,13 +37,38 @@ This analysis led me to recognize that statistical modeling should not begin wit
 
 Understanding **how a variable is measured or generated**, what information contributes to that measurement, and whether the research question is scientifically meaningful are equally important when interpreting statistical results.
 
-This consideration motivated the subsequent analysis of sleep characteristics and heart rate responses, which focuses more directly on deriving meaningful physiological features from high-resolution wearable data.
+This consideration motivated the subsequent analysis of sleep characteristics and heart rate responses, which focuses more directly on deriving meaningful physiological features from wearable data.
 
 
-## Part II: Analysis of Sleep Characteristics and Heart Rate Responses Using Wearable Data
+## **Part II: Analysis of Sleep Characteristics and Heart Rate Responses Using Wearable Data**
 Status: Ongoing
 
-**Research Focus**
+**Research Focus**<br>
+To derive sleep-related characteristics and heart rate features from wearable device data and explore their relationships.
+
+The analysis uses:
+* Minute-level sleep records
+* 5-second-level heart rate records
+
+Sleep records are processed to identify individual sleep sessions and derive sleep-related characteristics, including:
+* Total time in bed
+* Total sleep time
+* Sleep latency
+* Awake/restless events
+* Main Sleep vs. nap
+
+Continuous sleep-state periods are converted into time intervals to allow temporal alignment with heart rate measurements.
+
+Heart rate measurements are then aligned with sleep periods and sleep-related events to derive features including:
+* Average heart rate during sleep
+* Minimum and maximum heart rate during sleep
+* Morning resting heart rate
+* Heart rate around awakening
+* Average heart rate during awake and restless periods
+
+**Next Steps**<br>
+Focus on exploratory statistical analysis of the derived features and evaluate appropriate methods for examining the relationships.
+
 
 ## Tech Stack
 * **Programming Language:** R 
